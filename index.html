@@ -1,349 +1,393 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jerico Health & Tech — 인하대학교 에이징 솔루션 센터</title>
+  <title>Jerico Health & Tech — Korea · U.S. · Japan Healthcare Innovation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0a1628;
-      --navy2: #0f2044;
-      --teal: #1d9e75;
-      --teal2: #5dcaa5;
-      --teal3: #e1f5ee;
-      --amber: #ef9f27;
-      --light: #f8f9fa;
-      --muted: #64748b;
-      --border: rgba(0,0,0,0.08);
-      --white: #ffffff;
+      --navy:   #0b1f3a;
+      --navy2:  #112952;
+      --teal:   #0f7d6e;
+      --teal2:  #17a98e;
+      --teal3:  #e0f5f1;
+      --gold:   #c89b3c;
+      --gold2:  #f0c060;
+      --cream:  #f9f6f0;
+      --light:  #f4f7fa;
+      --muted:  #607080;
+      --border: rgba(0,0,0,0.07);
+      --white:  #ffffff;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
       background: var(--light);
-      color: #1a2332;
+      color: #1a2530;
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       background: var(--navy);
-      padding: 0 2.5rem;
+      padding: 0 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
+      height: 62px;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+      z-index: 200;
     }
     .nav-logo {
       font-family: 'Space Mono', monospace;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--teal2);
-      letter-spacing: 0.5px;
+      color: var(--gold2);
       text-decoration: none;
+      letter-spacing: 0.5px;
     }
     .nav-logo span { color: #fff; }
-    .nav-links { display: flex; gap: 28px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.55);
       text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.3px;
+      font-size: 12px;
+      letter-spacing: 0.4px;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--teal2); }
+    .nav-links a:hover { color: var(--gold2); }
+    .nav-cta {
+      background: var(--teal2);
+      color: #fff !important;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 12px !important;
+    }
+    .nav-cta:hover { background: var(--teal) !important; color: #fff !important; }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       background: var(--navy);
-      padding: 72px 2.5rem 60px;
+      padding: 80px 3rem 72px;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 480px; height: 480px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%);
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 80% 20%, rgba(15,125,110,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 10% 80%, rgba(200,155,60,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: -60px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(239,159,39,0.06) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      position: relative;
     }
-    .hero-tag {
-      display: inline-block;
-      background: rgba(29,158,117,0.18);
-      color: var(--teal2);
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 18px;
+    }
+    .flag-row { display: flex; gap: 6px; }
+    .flag { font-size: 18px; }
+    .eyebrow-text {
       font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--gold2);
       text-transform: uppercase;
-      border: 0.5px solid rgba(93,202,165,0.3);
     }
     .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(28px, 4vw, 42px);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 50px);
       color: #fff;
-      line-height: 1.25;
-      margin-bottom: 16px;
+      line-height: 1.2;
+      margin-bottom: 18px;
     }
     .hero h1 em {
       font-style: italic;
-      color: var(--teal2);
+      color: var(--gold2);
     }
     .hero-sub {
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.48);
       font-size: 14px;
-      max-width: 560px;
-      margin-bottom: 32px;
+      max-width: 540px;
+      margin-bottom: 36px;
       line-height: 1.9;
     }
-    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-    .badge {
-      background: rgba(255,255,255,0.06);
-      border: 0.5px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.65);
-      font-size: 11px;
-      padding: 6px 14px;
-      border-radius: 20px;
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal2);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-    .badge.accent {
-      background: rgba(29,158,117,0.2);
-      border-color: rgba(29,158,117,0.4);
-      color: var(--teal2);
+    .btn-primary:hover { background: var(--teal); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
     }
+    .btn-outline:hover { border-color: var(--gold2); color: var(--gold2); }
 
-    /* SECTIONS */
-    section { padding: 64px 2.5rem; }
-    section:nth-child(even) { background: var(--white); }
+    /* Stat strip */
+    .hero-stat-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 24px 20px;
+      min-width: 160px;
+    }
+    .hstat { text-align: center; }
+    .hstat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--gold2);
+      display: block;
+      line-height: 1;
+    }
+    .hstat-label { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; letter-spacing: 0.3px; }
+    .hstat-div { height: 0.5px; background: rgba(255,255,255,0.07); }
+
+    /* ── SECTIONS ── */
+    section { padding: 72px 3rem; }
+    section.alt { background: var(--white); }
+    section.dark { background: var(--navy); }
 
     .section-label {
       font-family: 'Space Mono', monospace;
       font-size: 9px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--teal2);
       margin-bottom: 10px;
     }
+    .dark .section-label { color: var(--gold2); }
     .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(22px, 3vw, 32px);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 34px);
       color: var(--navy);
       line-height: 1.25;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
+    .dark .section-title { color: #fff; }
     .section-desc {
       color: var(--muted);
       font-size: 14px;
-      max-width: 600px;
-      margin-bottom: 32px;
+      max-width: 620px;
+      margin-bottom: 40px;
       line-height: 1.9;
     }
+    .dark .section-desc { color: rgba(255,255,255,0.45); }
 
-    /* STATS */
-    .stats-row {
-      display: flex;
-      background: var(--navy);
+    /* ── STATE PROJECT BANNER ── */
+    .state-banner {
+      background: linear-gradient(135deg, #0f2a4a 0%, #0b1f3a 100%);
+      border: 1px solid rgba(200,155,60,0.25);
       border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 32px;
-    }
-    .stat-item {
-      flex: 1;
-      padding: 24px 16px;
-      text-align: center;
-      border-right: 0.5px solid rgba(255,255,255,0.07);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 26px;
-      color: var(--teal2);
-      display: block;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-label { font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.3px; }
-
-    /* PRODUCT CARD */
-    .product-card {
-      background: var(--navy);
-      border-radius: 20px;
-      padding: 36px;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      max-width: 720px;
-    }
-    .product-card::after {
-      content: 'McKare™';
-      position: absolute;
-      right: -10px; bottom: -24px;
-      font-family: 'DM Serif Display', serif;
-      font-size: 96px;
-      color: rgba(255,255,255,0.03);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .product-name {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--amber);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .product-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 24px;
-      margin-bottom: 14px;
-      line-height: 1.3;
-    }
-    .product-card p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.9;
-      margin-bottom: 24px;
-      max-width: 480px;
-    }
-    .feature-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .pill {
-      background: rgba(29,158,117,0.18);
-      border: 0.5px solid rgba(29,158,117,0.35);
-      color: var(--teal2);
-      font-size: 11px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-family: 'Space Mono', monospace;
-    }
-
-    /* EXPO BANNER */
-    .expo-banner {
-      background: linear-gradient(135deg, #0f2044 0%, #0a1628 100%);
-      border-radius: 16px;
-      padding: 24px;
+      padding: 28px 32px;
       display: flex;
-      gap: 20px;
+      gap: 24px;
       align-items: flex-start;
-      border: 0.5px solid rgba(239,159,39,0.25);
-      margin-top: 24px;
-      max-width: 720px;
+      margin-bottom: 40px;
     }
-    .expo-date-box {
-      background: var(--amber);
-      border-radius: 10px;
-      padding: 12px 16px;
-      text-align: center;
-      min-width: 70px;
+    .state-icon {
+      font-size: 36px;
       flex-shrink: 0;
+      margin-top: 2px;
     }
-    .expo-date-box .month {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      font-weight: 700;
-      color: rgba(0,0,0,0.5);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .expo-date-box .day {
-      font-family: 'DM Serif Display', serif;
-      font-size: 30px;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .expo-date-box .year {
-      font-size: 10px;
-      color: rgba(0,0,0,0.4);
-    }
-    .expo-info h4 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 17px;
-      color: #fff;
+    .state-banner h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--gold2);
       margin-bottom: 6px;
     }
-    .expo-info p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
+    .state-banner p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
       line-height: 1.8;
-      margin-bottom: 8px;
     }
-    .expo-info a {
-      color: var(--amber);
+    .state-banner a {
+      color: var(--teal2);
       font-size: 11px;
       font-family: 'Space Mono', monospace;
       text-decoration: none;
     }
-    .expo-info a:hover { text-decoration: underline; }
+    .state-banner a:hover { text-decoration: underline; }
 
-    /* SERVICES */
+    /* ── SERVICES GRID ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px;
     }
     .service-card {
       background: var(--white);
       border: 0.5px solid var(--border);
       border-radius: 14px;
-      padding: 20px;
-      transition: box-shadow 0.2s;
+      padding: 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .service-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-    section:nth-child(even) .service-card { background: var(--light); }
-    .service-icon {
-      width: 40px; height: 40px;
+    section.alt .service-card { background: var(--light); }
+    section.dark .service-card {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.07);
+    }
+    .service-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .svc-icon {
+      width: 44px; height: 44px;
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 12px;
-      font-size: 18px;
+      font-size: 20px;
+      margin-bottom: 14px;
     }
-    .icon-teal { background: var(--teal3); }
-    .icon-amber { background: #faeeda; }
-    .icon-navy { background: #e6f1fb; }
-    .service-card h4 { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
-    .service-card p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .ic-teal  { background: var(--teal3); }
+    .ic-gold  { background: #fdf3dc; }
+    .ic-navy  { background: #e4ecf7; }
+    .ic-dark  { background: rgba(15,125,110,0.15); }
+    .service-card h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    section.dark .service-card h4 { color: rgba(255,255,255,0.85); }
+    .service-card p { font-size: 12px; color: var(--muted); line-height: 1.75; }
+    section.dark .service-card p { color: rgba(255,255,255,0.4); }
 
-    /* GLOBAL */
-    .global-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .country-card {
-      flex: 1; min-width: 200px;
+    /* ── BENCHMARKING STRIP ── */
+    .bench-strip {
+      display: flex;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 0.5px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .bench-item {
+      flex: 1;
+      padding: 24px 20px;
+      border-right: 0.5px solid var(--border);
+      background: var(--white);
+      text-align: center;
+    }
+    .bench-item:last-child { border-right: none; }
+    section.alt .bench-item { background: var(--light); }
+    .bench-flag { font-size: 28px; margin-bottom: 8px; display: block; }
+    .bench-item h4 { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .bench-item p { font-size: 11px; color: var(--muted); }
+
+    /* ── ABOUT / PROFILE ── */
+    .profile-card {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: flex-start;
+      max-width: 820px;
+    }
+    .profile-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal2), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .profile-body {}
+    .profile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .profile-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--gold2);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .ptag {
+      background: rgba(15,125,110,0.2);
+      border: 0.5px solid rgba(23,169,142,0.3);
+      color: var(--teal2);
+      font-size: 10px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: 'Space Mono', monospace;
+    }
+    .profile-bio {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.9;
+    }
+
+    /* ── PARTNER TAGS ── */
+    .partner-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .partner-tag {
       background: var(--white);
       border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 12px;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    section.alt .partner-tag { background: var(--light); }
+
+    /* ── INTERNSHIP / PROGRAM ── */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .program-card {
       border-radius: 14px;
       padding: 24px;
-      transition: box-shadow 0.2s;
+      border: 0.5px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
     }
-    .country-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-    section:nth-child(even) .country-card { background: var(--light); }
-    .country-flag { font-size: 32px; margin-bottom: 12px; display: block; }
-    .country-card h4 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
-    .country-card p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+    .program-card h4 { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+    .program-card p { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.75; }
+    .prog-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--gold2);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
 
-    /* TEAM */
+    /* ── TEAM ── */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -357,8 +401,8 @@
       text-align: center;
       transition: box-shadow 0.2s;
     }
-    .team-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-    section:nth-child(even) .team-card { background: var(--light); }
+    section.alt .team-card { background: var(--light); }
+    .team-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
     .avatar {
       width: 56px; height: 56px;
       border-radius: 50%;
@@ -368,57 +412,26 @@
       font-weight: 700;
       margin: 0 auto 12px;
     }
-    .av-teal { background: var(--teal3); color: #0f6e56; }
-    .av-navy { background: #e6f1fb; color: #185fa5; }
-    .av-amber { background: #faeeda; color: #854f0b; }
-    .av-coral { background: #faece7; color: #993c1d; }
-    .team-card h4 { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+    .av-teal  { background: var(--teal3); color: #0f6e56; }
+    .av-navy  { background: #e4ecf7; color: #185fa5; }
+    .av-gold  { background: #fdf3dc; color: #8a6000; }
+    .av-coral { background: #fdeae4; color: #993c1d; }
     .team-card .role {
-      font-size: 10px;
-      color: var(--teal);
       font-family: 'Space Mono', monospace;
-      letter-spacing: 0.8px;
+      font-size: 9px;
+      color: var(--teal2);
+      letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 4px;
     }
-    .team-card .name-en { font-size: 12px; color: var(--muted); }
+    .team-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+    .team-card .name-en { font-size: 11px; color: var(--muted); }
 
-    /* PARTNER TAGS */
-    .partner-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    .partner-tag {
-      background: var(--white);
-      border: 0.5px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 16px;
-      font-size: 12px;
-      color: var(--navy);
-      font-weight: 500;
-    }
-    section:nth-child(even) .partner-tag { background: var(--light); }
-
-    /* CONTACT GRID */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .contact-card {
-      background: var(--white);
-      border: 0.5px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-    }
-    section:nth-child(even) .contact-card { background: var(--light); }
-    .contact-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
-    .contact-card p { font-size: 12px; color: var(--muted); line-height: 1.8; }
-    .contact-card a { color: var(--teal); font-size: 12px; text-decoration: none; }
-    .contact-card a:hover { text-decoration: underline; }
-
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
-      background: var(--navy);
-      padding: 48px 2.5rem 32px;
-      color: rgba(255,255,255,0.35);
+      background: #070f1c;
+      padding: 52px 3rem 32px;
+      color: rgba(255,255,255,0.3);
       font-size: 12px;
     }
     .footer-top {
@@ -426,46 +439,46 @@
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 28px;
-      padding-bottom: 28px;
-      border-bottom: 0.5px solid rgba(255,255,255,0.08);
+      gap: 28px;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 0.5px solid rgba(255,255,255,0.07);
     }
-    .footer-brand .logo {
+    .footer-logo {
       font-family: 'Space Mono', monospace;
       font-size: 16px;
       font-weight: 700;
-      color: var(--teal2);
-      margin-bottom: 6px;
+      color: var(--gold2);
       text-decoration: none;
       display: block;
+      margin-bottom: 6px;
     }
-    .footer-brand .logo span { color: #fff; }
-    .footer-brand p { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+    .footer-logo span { color: #fff; }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 4px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
     .footer-links a {
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.3);
       text-decoration: none;
       font-size: 12px;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--teal2); }
+    .footer-links a:hover { color: var(--gold2); }
 
-    /* DIVIDER */
-    .divider {
-      height: 0.5px;
-      background: var(--border);
-      margin: 12px 0 28px;
-    }
+    /* ── DIVIDER ── */
+    .divider { height: 0.5px; background: var(--border); margin: 12px 0 28px; }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      nav { padding: 0 1.2rem; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
-      .hero, section { padding-left: 1.2rem; padding-right: 1.2rem; }
-      footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-      .stats-row { flex-wrap: wrap; }
-      .stat-item { flex: 1 0 45%; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+      .hero, section, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stat-strip { flex-direction: row; flex-wrap: wrap; min-width: unset; }
+      .hstat { flex: 1; min-width: 80px; }
+      .profile-card { grid-template-columns: 1fr; }
+      .bench-strip { flex-direction: column; }
+      .bench-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .bench-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -475,156 +488,205 @@
   <nav>
     <a class="nav-logo" href="#">JERICO<span> H&T</span></a>
     <div class="nav-links">
-      <a href="#about">소개</a>
-      <a href="#mckare">McKare™</a>
-      <a href="#services">서비스</a>
-      <a href="#global">해외진출</a>
-      <a href="#team">팀</a>
-      <a href="#contact">연락처</a>
+      <a href="#services">Services</a>
+      <a href="#benchmarking">Programs</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-tag">Jerico Health &amp; Tech</div>
-    <h1>초고령화 시대를 위한<br><em>AI 헬스케어 솔루션</em></h1>
-    <p class="hero-sub">인하대학교 에이징 솔루션 센터와 함께, 시니어를 위한 혁신적인 소프트웨어·서비스·제품을 연구개발하고 글로벌 시장으로 나아갑니다.</p>
-    <div class="hero-badges">
-      <span class="badge accent">인하대학교 에이징 솔루션 센터</span>
-      <span class="badge">JCFT McKare™ 홍보 파트너</span>
-      <span class="badge">Medtec Japan 2026 참가</span>
-      <span class="badge">미국 · 일본 해외진출 지원</span>
+    <div class="hero-bg"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <div class="flag-row">
+            <span class="flag">🇺🇸</span>
+            <span class="flag">🇰🇷</span>
+            <span class="flag">🇯🇵</span>
+          </div>
+          <span class="eyebrow-text">U.S. · Korea · Japan Healthcare Innovation</span>
+        </div>
+        <h1>Bridging Healthcare<br>Across <em>Three Nations</em></h1>
+        <p class="hero-sub">Jerico Health &amp; Tech is a U.S.-based company driving healthcare innovation through AI research, data analytics, international benchmarking, and venture support — connecting Korea, the U.S., and Japan.</p>
+        <div class="hero-btns">
+          <a href="#services" class="btn-primary">Our Services</a>
+          <a href="#about" class="btn-outline">About Us</a>
+        </div>
+      </div>
+      <div class="hero-stat-strip">
+        <div class="hstat">
+          <span class="hstat-num">3</span>
+          <div class="hstat-label">Nations</div>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">15+</span>
+          <div class="hstat-label">Years Teaching</div>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">5+</span>
+          <div class="hstat-label">Years Data Analytics</div>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">AI</span>
+          <div class="hstat-label">LLM · RAG · HuggingFace</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-label">About</div>
-    <div class="section-title">에이징 솔루션 센터란?</div>
-    <p class="section-desc">인하대학교 정책대학원 노인학과 교수진, IT 기업, 동문들이 함께 초고령화 사회를 맞이하는 시니어를 위한 솔루션 연구개발, 평가, 정보제공, 모니터링을 수행합니다.</p>
+  <!-- STATE PROJECT -->
+  <section id="news">
+    <div class="section-label">Washington State</div>
+    <div class="section-title">State Government Project</div>
+    <p class="section-desc">Jerico Health &amp; Tech is actively engaged in Washington State government healthcare projects, advancing public health through data-driven innovation.</p>
 
-    <div class="stats-row">
-      <div class="stat-item">
-        <span class="stat-num">R&amp;D</span>
-        <div class="stat-label">연구개발</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2개국</span>
-        <div class="stat-label">해외진출 (미국·일본)</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">AI</span>
-        <div class="stat-label">비접촉 생체모니터링</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">복지</span>
-        <div class="stat-label">돌봄 연계 체계</div>
-      </div>
-    </div>
-
-    <div class="section-label">Research Focus</div>
-    <p class="section-desc">인천동북권 심뇌혈관질환 의료돌봄 연계체계 실태 및 표준화방안 심층조사 등 지역 기반 정책 연구를 수행합니다.</p>
-  </section>
-
-  <!-- MCKARE -->
-  <section id="mckare">
-    <div class="section-label">Featured Product</div>
-    <div class="section-title">McKare™ 맥케어</div>
-    <p class="section-desc">제이씨에프테크놀러지(JCFT)가 개발한 AI 기반 비접촉 생체 모니터링 솔루션입니다.</p>
-
-    <div class="product-card">
-      <div class="product-name">JCFT × Inha Aging Solution Center</div>
-      <h3>AI 비접촉 생체 모니터링<br>McKare™ (맥케어)</h3>
-      <p>카메라 기반 비접촉 방식으로 심박수, 호흡, 혈압 등 생체신호를 실시간 모니터링합니다. 시니어 돌봄 환경에 최적화된 AI 솔루션으로, 의료·복지·요양 현장에서 활용됩니다.</p>
-      <div class="feature-pills">
-        <span class="pill">비접촉 모니터링</span>
-        <span class="pill">AI 생체신호 분석</span>
-        <span class="pill">실시간 알림</span>
-        <span class="pill">IoT 연동</span>
-        <span class="pill">시니어 최적화</span>
-      </div>
-    </div>
-
-    <div class="expo-banner">
-      <div class="expo-date-box">
-        <div class="month">APR</div>
-        <div class="day">20</div>
-        <div class="year">— 25, 2026</div>
-      </div>
-      <div class="expo-info">
-        <h4>Medtec Japan 2026 참가</h4>
-        <p>의료용구·복지용구·돌봄 로봇 전시 및 의료DX 소개, 세미나 개최<br>McKare™ 홍보 지원을 위해 인하대 에이징 솔루션 센터와 함께 참가합니다.</p>
-        <a href="https://medtecjapan.com/en/for-exhibition/" target="_blank">medtecjapan.com →</a>
+    <div class="state-banner">
+      <div class="state-icon">🏛️</div>
+      <div>
+        <h3>Washington State Government Healthcare Project</h3>
+        <p>As featured in Seattle Korean Daily — Jerico H&T leads state-level healthcare initiatives, applying AI-driven data analysis and healthcare consulting to improve public health outcomes across Washington State.</p>
+        <a href="https://www.seattlekdaily.com/news/articleView.html?idxno=17125" target="_blank">Read coverage in Seattle Korean Daily →</a>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="section-label">Services</div>
-    <div class="section-title">주요 서비스</div>
-    <p class="section-desc">에이징 솔루션 센터가 제공하는 연구·개발·지원 서비스입니다.</p>
+  <section id="services" class="alt">
+    <div class="section-label">What We Do</div>
+    <div class="section-title">Core Services</div>
+    <p class="section-desc">From AI research to venture acceleration, Jerico H&amp;T delivers end-to-end healthcare innovation across the U.S., Korea, and Japan.</p>
 
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon icon-teal">🔬</div>
-        <h4>R&amp;D 연구개발</h4>
-        <p>시니어 헬스케어 소프트웨어, 서비스, 제품 연구개발 및 지원</p>
+        <div class="svc-icon ic-teal">🌐</div>
+        <h4>Korea–U.S.–Japan Benchmarking</h4>
+        <p>Cross-border healthcare benchmarking programs comparing systems, policies, and best practices across three nations.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon icon-navy">📊</div>
-        <h4>평가·모니터링</h4>
-        <p>솔루션 성능 평가, 임상 모니터링, 효과성 검증</p>
+        <div class="svc-icon ic-navy">📦</div>
+        <h4>Healthcare Product Distribution</h4>
+        <p>Strategic distribution of innovative healthcare products including AI-based solutions like McKare™ across international markets.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon icon-amber">📋</div>
-        <h4>정책·정보 제공</h4>
-        <p>고령화 정책 연구, 돌봄 연계체계 표준화 방안 제시</p>
+        <div class="svc-icon ic-gold">📊</div>
+        <h4>Healthcare Consulting &amp; Data Analysis</h4>
+        <p>Transforming complex medical datasets into actionable insights using Tableau, Power BI, SQL, Excel, and advanced analytics.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon icon-teal">🌏</div>
-        <h4>해외진출 지원</h4>
-        <p>미국·일본 시장 진출 전략 수립 및 전시회 참가 지원</p>
+        <div class="svc-icon ic-teal">🧠</div>
+        <h4>AI Research &amp; UX Assistance</h4>
+        <p>Applied AI research leveraging LLMs, HuggingFace, and RAG techniques. UX design support for healthcare digital products.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon icon-navy">🤝</div>
-        <h4>네트워크 연계</h4>
-        <p>교수진·IT기업·동문 네트워크를 통한 산학협력</p>
+        <div class="svc-icon ic-navy">💡</div>
+        <h4>Healthcare Solution Development</h4>
+        <p>End-to-end development of healthcare software, data pipelines, and AI-driven solutions tailored to clinical environments.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon icon-amber">🏥</div>
-        <h4>의료돌봄 연계</h4>
-        <p>심뇌혈관질환 등 의료-돌봄 연계체계 실태조사 및 개선</p>
+        <div class="svc-icon ic-gold">🚀</div>
+        <h4>Venture Support</h4>
+        <p>Startup acceleration, mentoring, and venture support for companies operating in the healthcare technology sector.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon ic-teal">🎓</div>
+        <h4>Internship Accelerator Program</h4>
+        <p>Hands-on internship programs connecting students and emerging talent with real-world healthcare data and AI projects.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon ic-navy">🤝</div>
+        <h4>Community &amp; Business Partnerships</h4>
+        <p>Building strategic partnerships with local communities, hospitals, clinics, and businesses to create lasting healthcare impact.</p>
       </div>
     </div>
   </section>
 
-  <!-- GLOBAL -->
-  <section id="global">
-    <div class="section-label">Global Expansion</div>
-    <div class="section-title">해외 진출 지원</div>
-    <p class="section-desc">미국과 일본 시장을 중심으로 국내 시니어 헬스케어 솔루션의 글로벌 진출을 지원합니다.</p>
+  <!-- BENCHMARKING -->
+  <section id="benchmarking">
+    <div class="section-label">International Programs</div>
+    <div class="section-title">Korea–U.S.–Japan<br>Healthcare Benchmarking</div>
+    <p class="section-desc">We bridge healthcare ecosystems across three nations — comparing systems, sharing best practices, and fostering collaboration between governments, hospitals, and innovators.</p>
 
-    <div class="global-row">
-      <div class="country-card">
-        <span class="country-flag">🇯🇵</span>
-        <h4>일본 시장</h4>
-        <p>Medtec Japan 전시회 참가, 의료기기·복지용구 시장 진출, 초고령사회 일본과의 협력 강화</p>
+    <div class="bench-strip">
+      <div class="bench-item">
+        <span class="bench-flag">🇰🇷</span>
+        <h4>Korea</h4>
+        <p>Senior care policy, AI health solutions, Inha Aging Solution Center collaboration</p>
       </div>
-      <div class="country-card">
-        <span class="country-flag">🇺🇸</span>
-        <h4>미국 시장</h4>
-        <p>미국 헬스케어 시장 진출 전략, 현지 규제 대응, 파트너십 구축 지원</p>
+      <div class="bench-item">
+        <span class="bench-flag">🇺🇸</span>
+        <h4>United States</h4>
+        <p>Washington State projects, data analytics, LLM &amp; AI healthcare applications</p>
+      </div>
+      <div class="bench-item">
+        <span class="bench-flag">🇯🇵</span>
+        <h4>Japan</h4>
+        <p>Medtec Japan 2026, aging society solutions, medical device &amp; welfare technology</p>
       </div>
     </div>
 
-    <div style="margin-top: 24px;">
-      <div class="section-label" style="margin-bottom: 12px;">Key Events</div>
-      <div class="partner-row">
-        <span class="partner-tag">Medtec Japan 2026 (4/20~25)</span>
-        <span class="partner-tag">의료DX 세미나</span>
-        <span class="partner-tag">돌봄 로봇 전시</span>
-        <span class="partner-tag">복지용구 전시회</span>
+    <div class="section-label" style="margin-bottom:12px;">Key Events &amp; Partners</div>
+    <div class="partner-row">
+      <span class="partner-tag">Medtec Japan 2026 (Apr 20–25)</span>
+      <span class="partner-tag">Washington State Gov. Project</span>
+      <span class="partner-tag">Inha University Aging Solution Center</span>
+      <span class="partner-tag">JCFT McKare™</span>
+      <span class="partner-tag">Seattle Korean Daily</span>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="dark">
+    <div class="section-label">Programs</div>
+    <div class="section-title">Accelerator &amp; Internship</div>
+    <p class="section-desc">Jerico H&amp;T cultivates the next generation of healthcare innovators through structured programs and real-world partnerships.</p>
+
+    <div class="program-grid">
+      <div class="program-card">
+        <div class="prog-num">01 — Internship</div>
+        <h4>Internship Accelerator Program</h4>
+        <p>Hands-on experience in healthcare data analysis, AI research, and UX design. Open to students and early-career professionals in the U.S., Korea, and Japan.</p>
+      </div>
+      <div class="program-card">
+        <div class="prog-num">02 — Venture</div>
+        <h4>Healthcare Venture Support</h4>
+        <p>Mentorship, funding guidance, and market access support for startups developing solutions in diagnostics, elder care, AI health, and medical devices.</p>
+      </div>
+      <div class="program-card">
+        <div class="prog-num">03 — Community</div>
+        <h4>Local Community &amp; Business Partnerships</h4>
+        <p>Collaborating with local health organizations, community centers, and businesses to deploy impactful healthcare programs on the ground.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="alt">
+    <div class="section-label">About</div>
+    <div class="section-title">Leadership &amp; Expertise</div>
+    <p class="section-desc">Our leadership brings deep expertise in data science, AI, and healthcare — with over 5 years in data analytics and 15+ years in academic instruction.</p>
+
+    <div class="profile-card">
+      <div class="profile-avatar">JH</div>
+      <div class="profile-body">
+        <div class="profile-name">Jerico Health &amp; Tech</div>
+        <div class="profile-title">Data Analytics · AI · Healthcare · U.S. Corporation</div>
+        <div class="profile-tags">
+          <span class="ptag">Data Analysis 5+ yrs</span>
+          <span class="ptag">Teaching 15+ yrs</span>
+          <span class="ptag">LLM / RAG</span>
+          <span class="ptag">HuggingFace</span>
+          <span class="ptag">Tableau</span>
+          <span class="ptag">Power BI</span>
+          <span class="ptag">SQL</span>
+          <span class="ptag">AI Healthcare</span>
+        </div>
+        <p class="profile-bio">Data Analyst with over 5 years of experience in data analysis and 15+ years of undergraduate teaching in databases, programming, and networking. Proficient in collecting, transforming, and organizing data to drive business solutions, with deep expertise in data mining technologies, AI-driven large language models (LLMs), HuggingFace, and retrieval-augmented generation (RAG). Skilled in interpreting complex medical datasets, designing efficient data pipelines, and leveraging advanced analytics platforms. Our work transforms raw healthcare data into meaningful insights that enhance patient care, streamline operations, and support informed decision-making.</p>
       </div>
     </div>
   </section>
@@ -632,8 +694,8 @@
   <!-- TEAM -->
   <section id="team">
     <div class="section-label">Team</div>
-    <div class="section-title">팀 소개</div>
-    <p class="section-desc">에이징 솔루션 센터 및 Jerico H&amp;T 핵심 구성원입니다.</p>
+    <div class="section-title">Our People</div>
+    <p class="section-desc">A multidisciplinary team spanning technology, design, marketing, and healthcare innovation.</p>
 
     <div class="team-grid">
       <div class="team-card">
@@ -649,8 +711,8 @@
         <div class="name-en">Eunsil Ha</div>
       </div>
       <div class="team-card">
-        <div class="avatar av-amber">남상</div>
-        <div class="role">Marketing</div>
+        <div class="avatar av-gold">남상</div>
+        <div class="role">Marketing & Planning</div>
         <h4>남상요</h4>
         <div class="name-en">Sangyo Nam</div>
       </div>
@@ -662,39 +724,38 @@
       </div>
     </div>
 
-    <div style="margin-top: 24px;">
-      <div class="section-label" style="margin-bottom: 12px;">Collaborators</div>
+    <div style="margin-top:28px;">
+      <div class="section-label" style="margin-bottom:12px;">Partner Organizations</div>
       <div class="partner-row">
-        <span class="partner-tag">인하대학교 정책대학원</span>
-        <span class="partner-tag">노인학과 교수진</span>
-        <span class="partner-tag">IT 기업 파트너</span>
-        <span class="partner-tag">동문 네트워크</span>
+        <span class="partner-tag">Inha University Aging Solution Center</span>
         <span class="partner-tag">JCFT (제이씨에프테크놀러지)</span>
+        <span class="partner-tag">Washington State Government</span>
+        <span class="partner-tag">Medtec Japan 2026</span>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="alt">
     <div class="section-label">Contact</div>
-    <div class="section-title">연락처</div>
-    <p class="section-desc">에이징 솔루션 센터 및 McKare™ 관련 문의를 환영합니다.</p>
+    <div class="section-title">Get In Touch</div>
+    <p class="section-desc">Interested in partnerships, internships, venture support, or our benchmarking programs? We'd love to hear from you.</p>
 
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="service-icon icon-teal" style="margin-bottom:12px;">🏫</div>
-        <h4>인하대학교 에이징 솔루션 센터</h4>
-        <p>인천광역시 미추홀구 인하로 100<br>인하대학교 내</p>
+    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="service-card">
+        <div class="svc-icon ic-navy">🇺🇸</div>
+        <h4>U.S. Headquarters</h4>
+        <p>Seattle, Washington<br>United States of America</p>
       </div>
-      <div class="contact-card">
-        <div class="service-icon icon-navy" style="margin-bottom:12px;">💼</div>
-        <h4>파트너십 문의</h4>
-        <p>연구개발, 해외진출, 솔루션 평가 협력에 관심 있는 기업·기관을 환영합니다.</p>
+      <div class="service-card">
+        <div class="svc-icon ic-teal">🇰🇷</div>
+        <h4>Korea Partner</h4>
+        <p>Inha University Aging Solution Center<br>Incheon, Korea</p>
       </div>
-      <div class="contact-card">
-        <div class="service-icon icon-amber" style="margin-bottom:12px;">🌐</div>
-        <h4>Medtec Japan</h4>
-        <p>전시회 방문 및 McKare™ 데모 문의<br><a href="https://medtecjapan.com/en/for-exhibition/" target="_blank">medtecjapan.com →</a></p>
+      <div class="service-card">
+        <div class="svc-icon ic-gold">🌐</div>
+        <h4>Media</h4>
+        <p>Featured in Seattle Korean Daily<br><a href="https://www.seattlekdaily.com/news/articleView.html?idxno=17125" target="_blank" style="color:var(--teal2);font-size:11px;">Read article →</a></p>
       </div>
     </div>
   </section>
@@ -702,21 +763,20 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="#">JERICO<span> H&T</span></a>
-        <p>Jerico Health &amp; Tech</p>
-        <p>인하대학교 에이징 솔루션 센터</p>
+      <div>
+        <a class="footer-logo" href="#">JERICO<span> H&T</span></a>
+        <div class="footer-tagline">Jerico Health &amp; Tech — U.S. Corporation</div>
+        <div class="footer-tagline" style="margin-top:4px;">Korea · United States · Japan</div>
       </div>
       <div class="footer-links">
-        <a href="#about">소개</a>
-        <a href="#mckare">McKare™</a>
-        <a href="#services">서비스</a>
-        <a href="#global">해외진출</a>
-        <a href="#team">팀</a>
-        <a href="#contact">연락처</a>
+        <a href="#services">Services</a>
+        <a href="#benchmarking">Programs</a>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-    <div>© 2026 Jerico Health &amp; Tech · 인하대학교 에이징 솔루션 센터 · All rights reserved.</div>
+    <div>© 2026 Jerico Health &amp; Tech. All rights reserved. · Seattle, WA, USA</div>
   </footer>
 
 </body>
