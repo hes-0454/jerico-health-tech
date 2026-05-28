@@ -17,15 +17,20 @@
     html { scroll-behavior: smooth; }
     body { font-family:'Inter','Noto Sans KR',sans-serif; background:var(--light); color:#1a2530; font-size:15px; line-height:1.75; overflow-x:hidden; }
 
+    /* NAV */
     nav { background:var(--navy); padding:0 3rem; display:flex; align-items:center; justify-content:space-between; height:62px; position:sticky; top:0; z-index:200; }
-    .nav-logo { font-family:'Space Mono',monospace; font-size:15px; font-weight:700; color:var(--gold2); text-decoration:none; letter-spacing:.5px; }
-    .nav-logo span { color:#fff; }
+    .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo-mark { width:36px; height:36px; flex-shrink:0; }
+    .nav-logo-text { display:flex; flex-direction:column; line-height:1; }
+    .nav-logo-name { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:#fff; letter-spacing:.5px; font-style:italic; }
+    .nav-logo-sub { font-family:'Space Mono',monospace; font-size:7.5px; color:var(--teal2); letter-spacing:2.5px; text-transform:uppercase; margin-top:2px; }
     .nav-links { display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
     .nav-links a { color:rgba(255,255,255,.55); text-decoration:none; font-size:12px; letter-spacing:.4px; transition:color .2s; }
     .nav-links a:hover { color:var(--gold2); }
     .nav-cta { background:var(--teal2); color:#fff !important; padding:7px 16px; border-radius:6px; }
     .nav-cta:hover { background:var(--teal) !important; }
 
+    /* HERO */
     .hero { background:var(--navy); padding:80px 3rem 72px; position:relative; overflow:hidden; }
     .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 80% 20%,rgba(15,125,110,.12) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(200,155,60,.07) 0%,transparent 70%); pointer-events:none; }
     .hero-grid { display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; position:relative; }
@@ -47,6 +52,7 @@
     .hstat-label { font-size:10px; color:rgba(255,255,255,.35); margin-top:4px; letter-spacing:.3px; }
     .hstat-div { height:.5px; background:rgba(255,255,255,.07); }
 
+    /* SECTIONS */
     section { padding:72px 3rem; }
     section.alt { background:var(--white); }
     section.dark { background:var(--navy); }
@@ -58,9 +64,11 @@
     .section-desc { color:var(--muted); font-size:14px; max-width:640px; margin-bottom:40px; line-height:1.9; }
     .dark .section-desc { color:rgba(255,255,255,.45); }
 
+    /* EXPO STRIP */
     .expo-strip { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
     .expo-badge { background:var(--navy); color:var(--gold2); font-family:'Space Mono',monospace; font-size:10px; padding:6px 14px; border-radius:20px; border:.5px solid rgba(200,155,60,.3); letter-spacing:.5px; }
 
+    /* STATE BANNER */
     .banner-card { background:linear-gradient(135deg,#0f2a4a,#0b1f3a); border:1px solid rgba(200,155,60,.2); border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start; margin-bottom:20px; }
     .banner-icon { font-size:34px; flex-shrink:0; margin-top:2px; }
     .banner-card h3 { font-family:'Playfair Display',serif; font-size:17px; color:var(--gold2); margin-bottom:6px; }
@@ -68,6 +76,7 @@
     .banner-card a { color:var(--teal2); font-size:11px; font-family:'Space Mono',monospace; text-decoration:none; }
     .banner-card a:hover { text-decoration:underline; }
 
+    /* BELLEVUE EVENT */
     .event-card { background:linear-gradient(135deg,#112244,#0b1f3a); border:.5px solid rgba(23,169,142,.25); border-radius:16px; padding:32px; margin-bottom:24px; }
     .event-tag { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px; color:var(--teal2); text-transform:uppercase; margin-bottom:10px; }
     .event-card h3 { font-family:'Playfair Display',serif; font-size:20px; color:#fff; margin-bottom:14px; }
@@ -80,20 +89,24 @@
     .kfactor-num { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold2); flex-shrink:0; margin-top:2px; }
     .kfactor-text { font-size:12px; color:rgba(255,255,255,.4); line-height:1.7; }
 
+    /* SERVICES */
     .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
     .service-card { background:var(--white); border:.5px solid var(--border); border-radius:14px; padding:22px; transition:box-shadow .2s,transform .2s; }
     section.alt .service-card { background:var(--light); }
     section.dark .service-card { background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.07); }
+    section.cream .service-card { background:var(--white); }
     .service-card:hover { box-shadow:0 6px 28px rgba(0,0,0,.08); transform:translateY(-2px); }
     .svc-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:12px; }
     .ic-teal { background:var(--teal3); }
     .ic-gold { background:#fdf3dc; }
     .ic-navy { background:#e4ecf7; }
+    .ic-dark { background:rgba(15,125,110,.15); }
     .service-card h4 { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:6px; }
     section.dark .service-card h4 { color:rgba(255,255,255,.85); }
     .service-card p { font-size:12px; color:var(--muted); line-height:1.75; }
     section.dark .service-card p { color:rgba(255,255,255,.4); }
 
+    /* BENCHMARKING */
     .bench-strip { display:flex; gap:0; border-radius:14px; overflow:hidden; border:.5px solid var(--border); margin-bottom:36px; }
     .bench-item { flex:1; padding:24px 20px; border-right:.5px solid var(--border); background:var(--white); text-align:center; }
     section.alt .bench-item { background:var(--light); }
@@ -102,6 +115,7 @@
     .bench-item h4 { font-size:13px; font-weight:500; color:var(--navy); margin-bottom:4px; }
     .bench-item p { font-size:11px; color:var(--muted); }
 
+    /* AGETECH TABLE */
     .agetech-table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:32px; }
     .agetech-table th { background:var(--navy); color:rgba(255,255,255,.7); padding:10px 16px; text-align:left; font-weight:500; font-size:11px; letter-spacing:.4px; }
     .agetech-table td { padding:10px 16px; border-bottom:.5px solid var(--border); color:var(--muted); vertical-align:top; line-height:1.7; }
@@ -109,6 +123,7 @@
     .agetech-table tr:nth-child(even) td { background:rgba(0,0,0,.02); }
     .td-label { color:var(--navy); font-weight:500; }
 
+    /* AGETECH 3 PILLARS */
     .pillars-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-bottom:32px; }
     .pillar-card { border-radius:14px; padding:24px; }
     .pc-1 { background:var(--teal3); border:.5px solid rgba(15,125,110,.2); }
@@ -120,167 +135,59 @@
     .pillar-card h4 { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:8px; }
     .pillar-card ul { font-size:12px; color:var(--muted); line-height:2; padding-left:16px; }
 
+    /* QUOTE */
     .quote-block { background:var(--navy); border-left:3px solid var(--gold2); border-radius:0 14px 14px 0; padding:24px 28px; margin-bottom:36px; max-width:680px; }
     .quote-text { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; color:rgba(255,255,255,.8); line-height:1.8; margin-bottom:10px; }
     .quote-source { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold2); letter-spacing:.5px; }
 
+    /* FORUM SUMMARY */
     .forum-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
     .forum-card { background:rgba(255,255,255,.04); border:.5px solid rgba(255,255,255,.07); border-radius:14px; padding:22px; }
     .forum-card h4 { font-size:13px; font-weight:500; color:rgba(255,255,255,.8); margin-bottom:8px; }
     .forum-card p { font-size:12px; color:rgba(255,255,255,.38); line-height:1.8; }
     .fc-accent { border-color:rgba(23,169,142,.25); }
 
+    /* INSIGHT BOX */
     .insight-box { background:linear-gradient(135deg,#112244,#0b1f3a); border:.5px solid rgba(200,155,60,.2); border-radius:14px; padding:28px; margin-top:32px; }
     .insight-box h4 { font-size:14px; font-weight:500; color:var(--gold2); margin-bottom:10px; }
     .insight-box p { font-size:13px; color:rgba(255,255,255,.45); line-height:1.9; }
 
+    /* VALUE CHAIN */
     .vchain-row { display:flex; gap:8px; align-items:stretch; flex-wrap:wrap; margin-bottom:32px; }
     .vchain-item { flex:1; min-width:100px; background:var(--white); border:.5px solid var(--border); border-radius:10px; padding:14px 12px; text-align:center; position:relative; }
+    section.alt .vchain-item { background:var(--light); }
     .vchain-item::after { content:'→'; position:absolute; right:-14px; top:50%; transform:translateY(-50%); color:var(--teal2); font-size:12px; z-index:1; }
     .vchain-item:last-child::after { display:none; }
     .vchain-item h5 { font-size:11px; font-weight:500; color:var(--navy); margin-bottom:4px; }
     .vchain-item p { font-size:10px; color:var(--muted); line-height:1.5; }
 
+    /* PROGRAMS */
     .program-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
     .program-card { border-radius:14px; padding:24px; border:.5px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); }
     .program-card h4 { font-size:14px; font-weight:500; color:rgba(255,255,255,.85); margin-bottom:8px; }
     .program-card p { font-size:12px; color:rgba(255,255,255,.4); line-height:1.75; }
     .prog-num { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold2); letter-spacing:1px; margin-bottom:8px; }
 
-    /* ===== TEAM 새 디자인 ===== */
-    #team { background: var(--navy); }
-    #team .section-label { color: var(--gold2); }
-    #team .section-title { color: #fff; }
-    #team .section-desc { color: rgba(255,255,255,.45); }
+    /* TEAM */
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; }
+    .team-card { background:var(--white); border:.5px solid var(--border); border-radius:14px; padding:24px 16px; text-align:center; transition:box-shadow .2s; }
+    section.alt .team-card { background:var(--light); }
+    .team-card:hover { box-shadow:0 4px 20px rgba(0,0,0,.07); }
+    .avatar { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:15px; font-weight:700; margin:0 auto 12px; }
+    .av-teal { background:var(--teal3); color:#0f6e56; }
+    .av-navy { background:#e4ecf7; color:#185fa5; }
+    .av-gold { background:#fdf3dc; color:#8a6000; }
+    .av-coral { background:#fdeae4; color:#993c1d; }
+    .team-card .role { font-family:'Space Mono',monospace; font-size:9px; color:var(--teal2); letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+    .team-card h4 { font-size:14px; font-weight:500; margin-bottom:3px; }
+    .team-card .name-en { font-size:11px; color:var(--muted); }
 
-    .team-grid-new {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-
-    .team-card-new {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      background: rgba(255,255,255,.04);
-      border: .5px solid rgba(255,255,255,.08);
-      padding: 32px 24px 28px;
-      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-    }
-    .team-card-new:hover {
-      transform: translateY(-6px);
-      border-color: rgba(240,192,96,.3);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35), 0 0 0 .5px rgba(240,192,96,.15);
-    }
-    .team-card-new::before {
-      content:'';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-    .tc-ceo::before  { background: linear-gradient(90deg, var(--teal2), var(--teal)); }
-    .tc-cto::before  { background: linear-gradient(90deg, #185fa5, #378add); }
-    .tc-mkt::before  { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
-    .tc-dsn::before  { background: linear-gradient(90deg, #993c1d, #d85a30); }
-
-    .team-card-new::after {
-      content:'';
-      position: absolute;
-      top: -40px; right: -40px;
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      opacity: .06;
-      pointer-events: none;
-    }
-    .tc-ceo::after  { background: var(--teal2); }
-    .tc-cto::after  { background: #378add; }
-    .tc-mkt::after  { background: var(--gold2); }
-    .tc-dsn::after  { background: #d85a30; }
-
-    .tc-avatar {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Space Mono', monospace;
-      font-size: 16px; font-weight: 700;
-      margin-bottom: 20px;
-      position: relative; z-index: 1;
-    }
-    .tc-ceo .tc-avatar { background: rgba(23,169,142,.18); color: var(--teal2); border: 1.5px solid rgba(23,169,142,.3); }
-    .tc-cto .tc-avatar { background: rgba(55,138,221,.18); color: #378add; border: 1.5px solid rgba(55,138,221,.3); }
-    .tc-mkt .tc-avatar { background: rgba(240,192,96,.15); color: var(--gold2); border: 1.5px solid rgba(240,192,96,.25); }
-    .tc-dsn .tc-avatar { background: rgba(216,90,48,.15); color: #d85a30; border: 1.5px solid rgba(216,90,48,.25); }
-
-    .tc-role {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      position: relative; z-index: 1;
-    }
-    .tc-ceo .tc-role { color: var(--teal2); }
-    .tc-cto .tc-role { color: #378add; }
-    .tc-mkt .tc-role { color: var(--gold2); }
-    .tc-dsn .tc-role { color: #d85a30; }
-
-    .tc-name-ko {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 2px;
-      position: relative; z-index: 1;
-    }
-    .tc-name-en {
-      font-size: 12px;
-      color: rgba(255,255,255,.35);
-      font-family: 'Space Mono', monospace;
-      letter-spacing: .5px;
-      position: relative; z-index: 1;
-    }
-    .tc-divider {
-      height: .5px;
-      background: rgba(255,255,255,.07);
-      margin: 18px 0;
-      position: relative; z-index: 1;
-    }
-    .tc-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      position: relative; z-index: 1;
-    }
-    .tc-tag {
-      font-size: 10px;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-family: 'Space Mono', monospace;
-      letter-spacing: .3px;
-    }
-    .tc-ceo .tc-tag { background: rgba(23,169,142,.12); color: var(--teal2); border: .5px solid rgba(23,169,142,.2); }
-    .tc-cto .tc-tag { background: rgba(55,138,221,.12); color: #378add; border: .5px solid rgba(55,138,221,.2); }
-    .tc-mkt .tc-tag { background: rgba(240,192,96,.1); color: var(--gold2); border: .5px solid rgba(240,192,96,.2); }
-    .tc-dsn .tc-tag { background: rgba(216,90,48,.1); color: #d85a30; border: .5px solid rgba(216,90,48,.2); }
-
-    .partner-row-dark { display:flex; gap:8px; flex-wrap:wrap; }
-    .partner-tag-dark {
-      background: rgba(255,255,255,.05);
-      border: .5px solid rgba(255,255,255,.1);
-      border-radius: 8px;
-      padding: 8px 16px;
-      font-size: 12px;
-      color: rgba(255,255,255,.55);
-      font-weight: 500;
-      transition: border-color .2s, color .2s;
-    }
-    .partner-tag-dark:hover { border-color: rgba(240,192,96,.3); color: var(--gold2); }
-
+    /* PARTNER TAGS */
     .partner-row { display:flex; gap:8px; flex-wrap:wrap; }
     .partner-tag { background:var(--white); border:.5px solid var(--border); border-radius:8px; padding:8px 16px; font-size:12px; color:var(--navy); font-weight:500; }
     section.alt .partner-tag { background:var(--light); }
 
+    /* PROFILE */
     .profile-card { background:var(--navy); border-radius:20px; padding:40px; display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:flex-start; max-width:820px; }
     .profile-avatar { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,var(--teal2),var(--teal)); display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:22px; font-weight:700; color:#fff; flex-shrink:0; }
     .profile-name { font-family:'Playfair Display',serif; font-size:22px; color:#fff; margin-bottom:4px; }
@@ -289,10 +196,13 @@
     .ptag { background:rgba(15,125,110,.2); border:.5px solid rgba(23,169,142,.3); color:var(--teal2); font-size:10px; padding:4px 10px; border-radius:20px; font-family:'Space Mono',monospace; }
     .profile-bio { font-size:13px; color:rgba(255,255,255,.45); line-height:1.9; }
 
+    /* FOOTER */
     footer { background:#070f1c; padding:52px 3rem 32px; color:rgba(255,255,255,.3); font-size:12px; }
     .footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; margin-bottom:32px; padding-bottom:32px; border-bottom:.5px solid rgba(255,255,255,.07); }
-    .footer-logo { font-family:'Space Mono',monospace; font-size:16px; font-weight:700; color:var(--gold2); text-decoration:none; display:block; margin-bottom:6px; }
-    .footer-logo span { color:#fff; }
+    .footer-logo { display:flex; align-items:center; gap:10px; text-decoration:none; margin-bottom:8px; }
+    .footer-logo-mark { width:40px; height:40px; flex-shrink:0; }
+    .footer-logo-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:#fff; font-style:italic; display:block; letter-spacing:.5px; }
+    .footer-logo-sub { font-family:'Space Mono',monospace; font-size:8px; color:var(--teal2); letter-spacing:2px; text-transform:uppercase; margin-top:2px; display:block; }
     .footer-tagline { font-size:12px; color:rgba(255,255,255,.25); margin-top:4px; }
     .footer-links { display:flex; gap:20px; flex-wrap:wrap; align-items:center; }
     .footer-links a { color:rgba(255,255,255,.3); text-decoration:none; font-size:12px; transition:color .2s; }
@@ -312,17 +222,26 @@
       .profile-card { grid-template-columns:1fr; }
       .vchain-row { flex-direction:column; }
       .vchain-item::after { display:none; }
-      .team-grid-new { grid-template-columns: 1fr 1fr; gap:12px; }
-    }
-    @media(max-width:440px) {
-      .team-grid-new { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">JERICO<span> H&T</span></a>
+  <a class="nav-logo" href="#">
+    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" fill="#0b1f3a" stroke="#1a3560" stroke-width="0.5"/>
+      <path d="M18 1 A17 17 0 0 1 35 18" fill="none" stroke="#17a98e" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M18 35 A17 17 0 0 1 1 18" fill="none" stroke="#f0c060" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="18" y="23" text-anchor="middle" fill="#ffffff" font-size="15" font-family="Georgia,serif" font-style="italic" font-weight="600">J</text>
+      <path d="M8 18 L11 18 L12.5 14 L14.5 22 L16 15.5 L17.5 20.5 L19 18 L28 18" fill="none" stroke="#17a98e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Jerico</span>
+      <span class="nav-logo-sub">Health &amp; Tech</span>
+    </div>
+  </a>
   <div class="nav-links">
     <a href="#news">News</a>
     <a href="#services">Services</a>
@@ -334,11 +253,19 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid">
     <div>
       <div class="hero-eyebrow">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <circle cx="24" cy="24" r="23" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+          <path d="M24 1 A23 23 0 0 1 47 24" fill="none" stroke="#17a98e" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M24 47 A23 23 0 0 1 1 24" fill="none" stroke="#f0c060" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="24" y="31" text-anchor="middle" fill="#ffffff" font-size="20" font-family="Georgia,serif" font-style="italic" font-weight="600">J</text>
+          <path d="M10 24 L14 24 L16.5 18 L19.5 30 L22 19 L24.5 28 L26.5 24 L38 24" fill="none" stroke="#17a98e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <div class="flag-row"><span class="flag">🇺🇸</span><span class="flag">🇰🇷</span><span class="flag">🇯🇵</span></div>
         <span class="eyebrow-text">U.S. · Korea · Japan Healthcare Innovation</span>
       </div>
@@ -361,10 +288,12 @@
   </div>
 </div>
 
+<!-- NEWS & PROJECTS -->
 <section id="news">
   <div class="section-label">Latest News &amp; Projects</div>
   <div class="section-title">In the Field</div>
   <p class="section-desc">From U.S. state government projects to K-Pop cultural outreach, Jerico H&amp;T is actively building bridges between healthcare innovation and community engagement.</p>
+
   <div class="banner-card">
     <div class="banner-icon">🏛️</div>
     <div>
@@ -373,6 +302,7 @@
       <a href="https://www.seattlekdaily.com/news/articleView.html?idxno=17125" target="_blank">Read coverage in Seattle Korean Daily →</a>
     </div>
   </div>
+
   <div class="banner-card" style="border-color:rgba(23,169,142,.25);">
     <div class="banner-icon">📰</div>
     <div>
@@ -383,10 +313,12 @@
   </div>
 </section>
 
+<!-- BELLEVUE EVENT -->
 <section id="bellevue" class="alt">
   <div class="section-label">Field Report · Sep 20</div>
   <div class="section-title">Bellevue City Hall<br>K-Pop &amp; McKare™ Pop-Up</div>
   <p class="section-desc">미국 서부 워싱턴 주 벨뷰 시청에서 열린 빅 허그 케이팝 행사에 한국 문화 팝업 부스로 참여, McKare™ 체험 존을 운영했습니다.</p>
+
   <div class="event-card">
     <div class="event-tag">Washington · Bellevue City Hall · Big Hug K-Pop Event</div>
     <h3>McKare™ Experience Zone — Field Report</h3>
@@ -405,9 +337,18 @@
       <div class="event-block">
         <h4>행사 기획 배경 — 3대 수요 요인</h4>
         <div class="kpop-factors">
-          <div class="kfactor"><span class="kfactor-num">01</span><span class="kfactor-text">음악 팬덤의 콘텐츠 소비가 단순 관람에서 체험·참여로 이동 — 현장형 프로그램 수요 증가</span></div>
-          <div class="kfactor"><span class="kfactor-num">02</span><span class="kfactor-text">한국 음식·제품 탐색 수요 증가 — 시식·시연 등 직접 체험이 방문 의도 강화</span></div>
-          <div class="kfactor"><span class="kfactor-num">03</span><span class="kfactor-text">한국 생활 문화 전반에 대한 관심 확대 — 가족 단위 방문, 다양한 연령 참여 자연스럽게 확보</span></div>
+          <div class="kfactor">
+            <span class="kfactor-num">01</span>
+            <span class="kfactor-text">음악 팬덤의 콘텐츠 소비가 단순 관람에서 체험·참여로 이동 — 현장형 프로그램 수요 증가</span>
+          </div>
+          <div class="kfactor">
+            <span class="kfactor-num">02</span>
+            <span class="kfactor-text">한국 음식·제품 탐색 수요 증가 — 시식·시연 등 직접 체험이 방문 의도 강화</span>
+          </div>
+          <div class="kfactor">
+            <span class="kfactor-num">03</span>
+            <span class="kfactor-text">한국 생활 문화 전반에 대한 관심 확대 — 가족 단위 방문, 다양한 연령 참여 자연스럽게 확보</span>
+          </div>
         </div>
       </div>
     </div>
@@ -417,35 +358,57 @@
   </div>
 </section>
 
+<!-- AGETECH VISION -->
 <section id="agetech" class="dark">
   <div class="section-label">AgeTech Vision</div>
   <div class="section-title">고령화 사회를 넘어<br><em style="font-style:italic;color:var(--gold2);">고령 시장</em>으로</div>
   <p class="section-desc">단순한 기술 시연을 넘어 실제 의료·복지·케어 현장에 적용 가능한 '돈 되는 혁신 기술'과 비즈니스 트렌드를 제시합니다. AgeTech 산업 밸류체인 전반을 하나로 연결한 <strong style="color:rgba(255,255,255,.7);font-weight:500;">융합형 기술 플랫폼</strong>입니다.</p>
+
   <div class="quote-block">
     <div class="quote-text">"기술은 노인을 대체하는 것이 아니라, 이해하고 보완하는 방향으로 진화해야 합니다. 기술은 목적이 아니라 수단입니다. 진짜 목표는 존엄한 노후, 포용적 돌봄, 그리고 세대 간 공존의 사회 설계입니다."</div>
     <div class="quote-source">— 경희대 김영선 교수 강연 중</div>
   </div>
+
   <div class="section-label" style="margin-bottom:14px;">AgeTech 핵심 3대 연구 분야</div>
   <div class="pillars-grid" style="margin-bottom:36px;">
     <div class="pillar-card pc-1">
       <div class="pillar-num">01 — Aging In Place Tech</div>
       <h4>시니어 자립 생활 기술</h4>
-      <ul><li>Senior Smart Housing</li><li>Senior Nutrition</li><li>Digital Healthcare</li></ul>
+      <ul>
+        <li>Senior Smart Housing</li>
+        <li>Senior Nutrition</li>
+        <li>Digital Healthcare</li>
+      </ul>
     </div>
     <div class="pillar-card pc-2">
       <div class="pillar-num" style="color:#185fa5;">02 — Care Tech</div>
       <h4>케어 기술</h4>
-      <ul><li>Care Robot</li><li>Care Platform</li><li>Care Tech Evaluation</li></ul>
+      <ul>
+        <li>Care Robot</li>
+        <li>Care Platform</li>
+        <li>Care Tech Evaluation</li>
+      </ul>
     </div>
     <div class="pillar-card pc-3">
       <div class="pillar-num" style="color:#8a6000;">03 — Age Tech Literacy</div>
       <h4>에이지 테크 리터러시</h4>
-      <ul><li>디지털 격차 해소</li><li>소외 계층 접근성</li><li>교육 &amp; 역량 강화</li></ul>
+      <ul>
+        <li>디지털 격차 해소</li>
+        <li>소외 계층 접근성</li>
+        <li>교육 &amp; 역량 강화</li>
+      </ul>
     </div>
   </div>
+
   <div class="section-label" style="margin-bottom:14px;">AgeTech vs Gerontology — 관점 비교</div>
   <table class="agetech-table" style="margin-bottom:36px;">
-    <thead><tr><th>항목</th><th>AgeTech</th><th>Gerontology (노년학)</th></tr></thead>
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>AgeTech</th>
+        <th>Gerontology (노년학)</th>
+      </tr>
+    </thead>
     <tbody>
       <tr><td class="td-label">초점</td><td>ROI와 디지털 혁신</td><td>삶의 질과 사회적 의미</td></tr>
       <tr><td class="td-label">수혜층</td><td>중산층, 고학력 시니어</td><td>전 계층, 특히 소외된 노년층</td></tr>
@@ -453,23 +416,39 @@
       <tr><td class="td-label">리스크</td><td>격차 심화, 과잉 기술화</td><td>정책 지연, 이상적 접근</td></tr>
     </tbody>
   </table>
+
   <div class="section-label" style="margin-bottom:14px;">포럼 주요 인사이트</div>
   <div class="forum-grid">
-    <div class="forum-card fc-accent"><h4>🏥 중산층 시니어 디지털 헬스케어</h4><p>건강, 돌봄, 여가, 금융을 포괄하는 통합적 접근. AI 기반 맞춤형 서비스 및 돌봄 로봇 실증 사례 발표.</p></div>
-    <div class="forum-card"><h4>📈 AgeTech 시장 급성장</h4><p>시니어 식품·주거·웰니스 산업 연 8% 이상 성장. 싱가포르·일본은 거버넌스와 기술 표준화 이미 완료.</p></div>
-    <div class="forum-card"><h4>🇰🇷 국내 현실의 이중성</h4><p>기술은 발전 중이나 공공 정책·제도 정비는 더딤. 디지털 격차, 신뢰 부족, 저소득층 전략 여전히 미흡.</p></div>
-    <div class="forum-card fc-accent"><h4>🌏 글로벌 벤치마킹</h4><p>한국·미국·일본 3국 헬스케어 시스템 비교 분석. 정책·기술·현장 사례를 연결하는 Jerico H&amp;T의 핵심 역할.</p></div>
+    <div class="forum-card fc-accent">
+      <h4>🏥 중산층 시니어 디지털 헬스케어</h4>
+      <p>건강, 돌봄, 여가, 금융을 포괄하는 통합적 접근. AI 기반 맞춤형 서비스 및 돌봄 로봇 실증 사례 발표.</p>
+    </div>
+    <div class="forum-card">
+      <h4>📈 AgeTech 시장 급성장</h4>
+      <p>시니어 식품·주거·웰니스 산업 연 8% 이상 성장. 싱가포르·일본은 거버넌스와 기술 표준화 이미 완료.</p>
+    </div>
+    <div class="forum-card">
+      <h4>🇰🇷 국내 현실의 이중성</h4>
+      <p>기술은 발전 중이나 공공 정책·제도 정비는 더딤. 디지털 격차, 신뢰 부족, 저소득층 전략 여전히 미흡.</p>
+    </div>
+    <div class="forum-card fc-accent">
+      <h4>🌏 글로벌 벤치마킹</h4>
+      <p>한국·미국·일본 3국 헬스케어 시스템 비교 분석. 정책·기술·현장 사례를 연결하는 Jerico H&amp;T의 핵심 역할.</p>
+    </div>
   </div>
+
   <div class="insight-box">
     <h4>💡 개인적 인사이트</h4>
     <p>이번 포럼을 통해 단순히 기술 솔루션만이 아니라, Gerontology(노년학) 관점에서의 삶 중심 접근이 병행되어야 함을 확인했습니다. 기술은 '도구'일 뿐, 노인의 삶을 이해하는 프레임 없이 도입될 경우 소외와 차별을 심화시킬 우려가 있습니다. Jerico H&amp;T는 기술과 인문적 가치를 통합하는 방향으로 솔루션을 설계합니다.</p>
   </div>
 </section>
 
+<!-- EXPO / EXHIBITIONS -->
 <section id="expo" class="alt">
   <div class="section-label">Exhibitions &amp; Expos</div>
   <div class="section-title">국내외 주요 전시회</div>
   <p class="section-desc">Jerico H&amp;T는 국내외 핵심 산업 전시회에 참가하여 McKare™를 비롯한 AI 헬스케어 솔루션을 선보이고 글로벌 네트워크를 구축합니다.</p>
+
   <div class="expo-strip">
     <span class="expo-badge">🇰🇷 AI &amp; 빅데이터쇼</span>
     <span class="expo-badge">🇰🇷 AI팩토리엑스포</span>
@@ -480,6 +459,7 @@
     <span class="expo-badge">🇰🇷 대한민국 가상융합산업전</span>
     <span class="expo-badge">🇯🇵 Medtec Japan 2026</span>
   </div>
+
   <div class="banner-card" style="margin-top:0;">
     <div class="banner-icon">🇯🇵</div>
     <div>
@@ -490,10 +470,12 @@
   </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="section-label">What We Do</div>
   <div class="section-title">Core Services</div>
   <p class="section-desc">From AI research to venture acceleration, Jerico H&amp;T delivers end-to-end healthcare innovation — connecting Korea, the U.S., and Japan through a unified AgeTech value chain platform.</p>
+
   <div class="section-label" style="margin-bottom:12px;">AgeTech Value Chain</div>
   <div class="vchain-row">
     <div class="vchain-item"><h5>Research</h5><p>AI · Data · Gerontology</p></div>
@@ -503,27 +485,75 @@
     <div class="vchain-item"><h5>Support</h5><p>Venture &amp; Policy</p></div>
     <div class="vchain-item"><h5>Scale</h5><p>US · KR · JP</p></div>
   </div>
+
   <div class="services-grid">
-    <div class="service-card"><div class="svc-icon ic-teal">🌐</div><h4>Korea–U.S.–Japan Benchmarking</h4><p>Cross-border healthcare benchmarking programs comparing systems, policies, and best practices across three nations.</p></div>
-    <div class="service-card"><div class="svc-icon ic-navy">📦</div><h4>Healthcare Product Distribution</h4><p>Strategic distribution of innovative healthcare products including AI-based solutions like McKare™ across international markets.</p></div>
-    <div class="service-card"><div class="svc-icon ic-gold">📊</div><h4>Healthcare Consulting &amp; Data Analysis</h4><p>Transforming complex medical datasets into actionable insights using Tableau, Power BI, SQL, Excel, and advanced analytics.</p></div>
-    <div class="service-card"><div class="svc-icon ic-teal">🧠</div><h4>AI Research &amp; UX Assistance</h4><p>Applied AI research leveraging LLMs, HuggingFace, and RAG techniques with UX design support for healthcare digital products.</p></div>
-    <div class="service-card"><div class="svc-icon ic-navy">💡</div><h4>Healthcare Solution Development</h4><p>End-to-end development of healthcare software, data pipelines, and AI-driven solutions tailored to clinical environments.</p></div>
-    <div class="service-card"><div class="svc-icon ic-gold">🚀</div><h4>Venture Support</h4><p>Startup acceleration, mentoring, and venture support for companies operating in the healthcare technology sector.</p></div>
-    <div class="service-card"><div class="svc-icon ic-teal">🎓</div><h4>Internship Accelerator Program</h4><p>Hands-on internship programs connecting students and emerging talent with real-world healthcare data and AI projects.</p></div>
-    <div class="service-card"><div class="svc-icon ic-navy">🤝</div><h4>Community &amp; Business Partnerships</h4><p>Building strategic partnerships with local communities, hospitals, clinics, and businesses to create lasting healthcare impact.</p></div>
+    <div class="service-card">
+      <div class="svc-icon ic-teal">🌐</div>
+      <h4>Korea–U.S.–Japan Benchmarking</h4>
+      <p>Cross-border healthcare benchmarking programs comparing systems, policies, and best practices across three nations.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-navy">📦</div>
+      <h4>Healthcare Product Distribution</h4>
+      <p>Strategic distribution of innovative healthcare products including AI-based solutions like McKare™ across international markets.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-gold">📊</div>
+      <h4>Healthcare Consulting &amp; Data Analysis</h4>
+      <p>Transforming complex medical datasets into actionable insights using Tableau, Power BI, SQL, Excel, and advanced analytics.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-teal">🧠</div>
+      <h4>AI Research &amp; UX Assistance</h4>
+      <p>Applied AI research leveraging LLMs, HuggingFace, and RAG techniques with UX design support for healthcare digital products.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-navy">💡</div>
+      <h4>Healthcare Solution Development</h4>
+      <p>End-to-end development of healthcare software, data pipelines, and AI-driven solutions tailored to clinical environments.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-gold">🚀</div>
+      <h4>Venture Support</h4>
+      <p>Startup acceleration, mentoring, and venture support for companies operating in the healthcare technology sector.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-teal">🎓</div>
+      <h4>Internship Accelerator Program</h4>
+      <p>Hands-on internship programs connecting students and emerging talent with real-world healthcare data and AI projects.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-navy">🤝</div>
+      <h4>Community &amp; Business Partnerships</h4>
+      <p>Building strategic partnerships with local communities, hospitals, clinics, and businesses to create lasting healthcare impact.</p>
+    </div>
   </div>
 </section>
 
+<!-- BENCHMARKING -->
 <section id="benchmarking" class="alt">
   <div class="section-label">International Programs</div>
   <div class="section-title">Korea–U.S.–Japan<br>Healthcare Benchmarking</div>
   <p class="section-desc">We bridge healthcare ecosystems across three nations — comparing systems, sharing best practices, and fostering collaboration between governments, hospitals, and innovators.</p>
+
   <div class="bench-strip">
-    <div class="bench-item"><span class="bench-flag">🇰🇷</span><h4>Korea</h4><p>Senior care policy, AI health solutions, Inha Aging Solution Center collaboration, AgeTech expos</p></div>
-    <div class="bench-item"><span class="bench-flag">🇺🇸</span><h4>United States</h4><p>Washington State projects, data analytics, LLM &amp; AI healthcare, Bellevue community outreach</p></div>
-    <div class="bench-item"><span class="bench-flag">🇯🇵</span><h4>Japan</h4><p>Medtec Japan 2026, aging society solutions, medical device &amp; welfare technology standards</p></div>
+    <div class="bench-item">
+      <span class="bench-flag">🇰🇷</span>
+      <h4>Korea</h4>
+      <p>Senior care policy, AI health solutions, Inha Aging Solution Center collaboration, AgeTech expos</p>
+    </div>
+    <div class="bench-item">
+      <span class="bench-flag">🇺🇸</span>
+      <h4>United States</h4>
+      <p>Washington State projects, data analytics, LLM &amp; AI healthcare, Bellevue community outreach</p>
+    </div>
+    <div class="bench-item">
+      <span class="bench-flag">🇯🇵</span>
+      <h4>Japan</h4>
+      <p>Medtec Japan 2026, aging society solutions, medical device &amp; welfare technology standards</p>
+    </div>
   </div>
+
   <div class="section-label" style="margin-bottom:12px;">Key Partners &amp; Events</div>
   <div class="partner-row">
     <span class="partner-tag">Medtec Japan 2026 (Apr 20–25)</span>
@@ -535,116 +565,123 @@
   </div>
 </section>
 
+<!-- PROGRAMS -->
 <section class="dark">
   <div class="section-label">Programs</div>
   <div class="section-title">Accelerator &amp; Internship</div>
   <p class="section-desc">Jerico H&amp;T cultivates the next generation of healthcare innovators through structured programs and real-world partnerships.</p>
+
   <div class="program-grid">
-    <div class="program-card"><div class="prog-num">01 — Internship</div><h4>Internship Accelerator Program</h4><p>Hands-on experience in healthcare data analysis, AI research, and UX design. Open to students and early-career professionals in the U.S., Korea, and Japan.</p></div>
-    <div class="program-card"><div class="prog-num">02 — Venture</div><h4>Healthcare Venture Support</h4><p>Mentorship, funding guidance, and market access support for startups developing solutions in diagnostics, elder care, AI health, and medical devices.</p></div>
-    <div class="program-card"><div class="prog-num">03 — Community</div><h4>Local Community &amp; Business Partnerships</h4><p>Collaborating with local health organizations, community centers, and businesses to deploy impactful healthcare programs on the ground.</p></div>
+    <div class="program-card">
+      <div class="prog-num">01 — Internship</div>
+      <h4>Internship Accelerator Program</h4>
+      <p>Hands-on experience in healthcare data analysis, AI research, and UX design. Open to students and early-career professionals in the U.S., Korea, and Japan.</p>
+    </div>
+    <div class="program-card">
+      <div class="prog-num">02 — Venture</div>
+      <h4>Healthcare Venture Support</h4>
+      <p>Mentorship, funding guidance, and market access support for startups developing solutions in diagnostics, elder care, AI health, and medical devices.</p>
+    </div>
+    <div class="program-card">
+      <div class="prog-num">03 — Community</div>
+      <h4>Local Community &amp; Business Partnerships</h4>
+      <p>Collaborating with local health organizations, community centers, and businesses to deploy impactful healthcare programs on the ground.</p>
+    </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
   <div class="section-title">Leadership &amp; Expertise</div>
   <p class="section-desc">Our leadership brings deep expertise in data science, AI, and healthcare — with over 5 years in data analytics and 15+ years in academic instruction.</p>
+
   <div class="profile-card">
     <div class="profile-avatar">JH</div>
     <div>
       <div class="profile-name">Jerico Health &amp; Tech</div>
       <div class="profile-title">Data Analytics · AI · Healthcare · U.S. Corporation</div>
       <div class="profile-tags">
-        <span class="ptag">Data Analysis 5+ yrs</span><span class="ptag">Teaching 15+ yrs</span><span class="ptag">LLM / RAG</span><span class="ptag">HuggingFace</span><span class="ptag">Tableau</span><span class="ptag">Power BI</span><span class="ptag">SQL</span><span class="ptag">AI Healthcare</span>
+        <span class="ptag">Data Analysis 5+ yrs</span>
+        <span class="ptag">Teaching 15+ yrs</span>
+        <span class="ptag">LLM / RAG</span>
+        <span class="ptag">HuggingFace</span>
+        <span class="ptag">Tableau</span>
+        <span class="ptag">Power BI</span>
+        <span class="ptag">SQL</span>
+        <span class="ptag">AI Healthcare</span>
       </div>
       <p class="profile-bio">Data Analyst with over 5 years of experience in data analysis and 15+ years of undergraduate teaching in databases, programming, and networking. Proficient in collecting, transforming, and organizing data to drive business solutions, with deep expertise in data mining technologies, AI-driven large language models (LLMs), HuggingFace, and retrieval-augmented generation (RAG). Skilled in interpreting complex medical datasets, designing efficient data pipelines, and leveraging advanced analytics platforms including Tableau, Power BI, Excel, and SQL. Our work transforms raw healthcare data into meaningful insights that enhance patient care, streamline operations, and support informed decision-making.</p>
     </div>
   </div>
 </section>
 
-<!-- TEAM — 새 디자인 -->
-<section id="team">
+<!-- TEAM -->
+<section id="team" class="alt">
   <div class="section-label">Team</div>
   <div class="section-title">Our People</div>
   <p class="section-desc">A multidisciplinary team spanning technology, design, marketing, and healthcare innovation.</p>
 
-  <div class="team-grid-new">
-    <div class="team-card-new tc-ceo">
-      <div class="tc-avatar">남승</div>
-      <div class="tc-role">CEO</div>
-      <div class="tc-name-ko">남승현</div>
-      <div class="tc-name-en">Roy Nam</div>
-      <div class="tc-divider"></div>
-      <div class="tc-tags">
-        <span class="tc-tag">Strategy</span>
-        <span class="tc-tag">AI Health</span>
-        <span class="tc-tag">Analytics</span>
-      </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar av-teal">남승</div>
+      <div class="role">CEO</div>
+      <h4>남승현</h4>
+      <div class="name-en">Roy Nam</div>
     </div>
-
-    <div class="team-card-new tc-cto">
-      <div class="tc-avatar">하은</div>
-      <div class="tc-role">CTO</div>
-      <div class="tc-name-ko">하은실</div>
-      <div class="tc-name-en">Eunsil Ha</div>
-      <div class="tc-divider"></div>
-      <div class="tc-tags">
-        <span class="tc-tag">Engineering</span>
-        <span class="tc-tag">LLM / RAG</span>
-        <span class="tc-tag">Platform</span>
-      </div>
+    <div class="team-card">
+      <div class="avatar av-navy">하은</div>
+      <div class="role">CTO</div>
+      <h4>하은실</h4>
+      <div class="name-en">Eunsil Ha</div>
     </div>
-
-    <div class="team-card-new tc-mkt">
-      <div class="tc-avatar">남상</div>
-      <div class="tc-role">Marketing &amp; Planning</div>
-      <div class="tc-name-ko">남상요</div>
-      <div class="tc-name-en">Sangyo Nam</div>
-      <div class="tc-divider"></div>
-      <div class="tc-tags">
-        <span class="tc-tag">Marketing</span>
-        <span class="tc-tag">Planning</span>
-        <span class="tc-tag">Global</span>
-      </div>
+    <div class="team-card">
+      <div class="avatar av-gold">남상</div>
+      <div class="role">Marketing &amp; Planning</div>
+      <h4>남상요</h4>
+      <div class="name-en">Sangyo Nam</div>
     </div>
-
-    <div class="team-card-new tc-dsn">
-      <div class="tc-avatar">남우</div>
-      <div class="tc-role">Design</div>
-      <div class="tc-name-ko">남우현</div>
-      <div class="tc-name-en">Jake Nam</div>
-      <div class="tc-divider"></div>
-      <div class="tc-tags">
-        <span class="tc-tag">UX / UI</span>
-        <span class="tc-tag">Visual</span>
-        <span class="tc-tag">Brand</span>
-      </div>
+    <div class="team-card">
+      <div class="avatar av-coral">남우</div>
+      <div class="role">Design</div>
+      <h4>남우현</h4>
+      <div class="name-en">Jake Nam</div>
     </div>
   </div>
 
-  <div>
-    <div class="section-label" style="margin-bottom:14px;">Partner Organizations</div>
-    <div class="partner-row-dark">
-      <span class="partner-tag-dark">Inha University Aging Solution Center</span>
-      <span class="partner-tag-dark">JCFT (제이씨에프테크놀러지)</span>
-      <span class="partner-tag-dark">Washington State Government</span>
-      <span class="partner-tag-dark">Bellevue City</span>
-      <span class="partner-tag-dark">Medtec Japan 2026</span>
-      <span class="partner-tag-dark">경희대학교</span>
+  <div style="margin-top:28px;">
+    <div class="section-label" style="margin-bottom:12px;">Partner Organizations</div>
+    <div class="partner-row">
+      <span class="partner-tag">Inha University Aging Solution Center</span>
+      <span class="partner-tag">JCFT (제이씨에프테크놀러지)</span>
+      <span class="partner-tag">Washington State Government</span>
+      <span class="partner-tag">Bellevue City</span>
+      <span class="partner-tag">Medtec Japan 2026</span>
+      <span class="partner-tag">경희대학교</span>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Contact</div>
   <div class="section-title">Get In Touch</div>
   <p class="section-desc">Interested in partnerships, internships, venture support, or our benchmarking programs? We'd love to hear from you.</p>
+
   <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-    <div class="service-card"><div class="svc-icon ic-navy">🇺🇸</div><h4>U.S. Headquarters</h4><p>Seattle / Bellevue<br>Washington, USA</p></div>
-    <div class="service-card"><div class="svc-icon ic-teal">🇰🇷</div><h4>Korea Partner</h4><p>Inha University Aging Solution Center<br>Incheon, Korea</p></div>
     <div class="service-card">
-      <div class="svc-icon ic-gold">📰</div><h4>Media</h4>
+      <div class="svc-icon ic-navy">🇺🇸</div>
+      <h4>U.S. Headquarters</h4>
+      <p>Seattle / Bellevue<br>Washington, USA</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-teal">🇰🇷</div>
+      <h4>Korea Partner</h4>
+      <p>Inha University Aging Solution Center<br>Incheon, Korea</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon ic-gold">📰</div>
+      <h4>Media</h4>
       <p>
         <a href="https://www.seattlekdaily.com/news/articleView.html?idxno=17125" target="_blank" style="color:var(--teal2);font-size:11px;text-decoration:none;">Seattle Korean Daily →</a><br>
         <a href="https://bravo.etoday.co.kr/view/atc_view/17493" target="_blank" style="color:var(--teal2);font-size:11px;text-decoration:none;">Bravo Etoday →</a><br>
@@ -654,10 +691,23 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
-      <a class="footer-logo" href="#">JERICO<span> H&T</span></a>
+      <a class="footer-logo" href="#">
+        <svg class="footer-logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" fill="#0b1f3a" stroke="#1a3560" stroke-width="0.5"/>
+          <path d="M20 1 A19 19 0 0 1 39 20" fill="none" stroke="#17a98e" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 39 A19 19 0 0 1 1 20" fill="none" stroke="#f0c060" stroke-width="3" stroke-linecap="round"/>
+          <text x="20" y="26" text-anchor="middle" fill="#ffffff" font-size="17" font-family="Georgia,serif" font-style="italic" font-weight="600">J</text>
+          <path d="M8 20 L12 20 L14 15 L16.5 25 L18.5 16 L20.5 23 L22 20 L32 20" fill="none" stroke="#17a98e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <span class="footer-logo-name">Jerico</span>
+          <span class="footer-logo-sub">Health &amp; Tech</span>
+        </div>
+      </a>
       <div class="footer-tagline">Jerico Health &amp; Tech — U.S. Corporation</div>
       <div class="footer-tagline" style="margin-top:4px;">Korea · United States · Japan</div>
     </div>
