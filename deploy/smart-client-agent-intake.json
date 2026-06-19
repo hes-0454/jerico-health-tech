@@ -1,0 +1,8 @@
+{
+  "client_name": "icp-agent-intake",
+  "grant_types": ["client_credentials"],
+  "token_endpoint_auth_method": "private_key_jwt",
+  "token_endpoint_auth_signing_alg": "ES384",
+  "jwks_uri": "https://agent-intake.icp.svc.cluster.local/.well-known/jwks.json",
+  "scope": "system/Consent.rs system/Patient.cus system/Observation.cus system/Condition.cus system/MedicationRequest.cus system/AllergyIntolerance.cus system/Provenance.c"
+}
